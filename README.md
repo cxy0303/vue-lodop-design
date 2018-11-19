@@ -2,6 +2,7 @@
 
 >基于lodop的vue简单打印设计工具
 
+![image](https://github.com/cxy0303/vue-lodop-design/blob/master/help/1.png?raw=true)
 
 
 
