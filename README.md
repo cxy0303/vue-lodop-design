@@ -4,7 +4,17 @@
 
 ![image](https://github.com/cxy0303/vue-lodop-design/blob/master/help/1.png?raw=true)
 
+一个很简单的设计工具，打印控件为lodop:http://www.lodop.net/
 
+工具使用教程：
+# 传入数据结构
+树形结构，节点字段
+{
+  id:'', ---字段编号
+  text:'',---字段名称
+  nodes:'',---子节点
+  cols:''----绑定表格时，没列的字段从这里选择
+}
 
 ## Build Setup
 
