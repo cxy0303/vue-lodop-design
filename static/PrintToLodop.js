@@ -154,7 +154,9 @@ PrintToLodop.prototype.g_table = function(control) {
     var row = tableschema.thead.rows[i];
     if (row["unprint"])
       continue;
-    var tr = table.insertRow();
+    var thead = table.appendChild(document.createElement('thead'));
+    // var tr = table.insertRow();
+    var tr = thead.insertRow();
     for (var j = 0; j < row.cells.length; j++) {
       var cell = row.cells[j];
       var td = tr.insertCell();
@@ -174,7 +176,9 @@ PrintToLodop.prototype.g_table = function(control) {
         var row = tableschema.tbody.rows[j];
         if (row["unprint"])
           continue;
-        var tr = table.insertRow();
+        var tbody = table.appendChild(document.createElement('tbody'));
+        // var tr = table.insertRow();
+        var tr = tbody.insertRow();
         for (var k = 0; k < row.cells.length; k++) {
           var cell = row.cells[k];
           var td = tr.insertCell();
