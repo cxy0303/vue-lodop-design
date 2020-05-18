@@ -826,8 +826,16 @@ export default {
       for (var i = 0; i < this.data.tbody.rows.length; i++) {
         sw = this.data.tbody.rows[i].cells[this.selecteddata.col].width;
         this.data.tbody.rows[i].cells.splice(this.selecteddata.col, 1);
+        // 将被删除的列的宽度分摊添加到table-columns内
+        var cells = this.data.tbody.rows[0].cells;
+        var addwidth = (sw / cells.length).toFixed(2);
+        for (var j = 0; j < cells.length; j++) {
+          var oldwidth = cells[j].style.width.replace('px', '');
+          this.data.tbody.rows[0].cells[j].style.width = (parseFloat(oldwidth) + parseFloat(addwidth)) + 'px';
+        }
       }
-      this.data.width -= sw;
+      // 这里应该让表格的宽度适应更人性化
+      // this.data.width -= sw;
       this.selecteddata.type = -1;
     },
     rowupinsert() {
